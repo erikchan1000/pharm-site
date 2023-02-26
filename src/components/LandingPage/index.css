@@ -1,0 +1,123 @@
+h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    font-style: italic;
+    color: #5355bb;
+    text-align: center;
+    margin: 0;
+}
+
+.break {
+    width: 20px;
+}
+.Header {
+    display: flex;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 10%;
+    justify-content: center;
+}
+.Buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: calc(1vh + 8px) 0;
+}
+
+button.Button {
+    color:white;
+    background-color: #5355bb;
+    height: 10vh;
+    width: 24vh;
+    border-radius: 5%;
+    font-size: 1.5em;;
+    font-weight: bold;
+    font-style: italic;
+    max-width: 275px;
+    min-width: 200px;
+    margin: 1vh 2vw;
+}
+
+button.Button.active {
+    animation: scale 0.5s ease-in-out;
+    animation-fill-mode: forwards;
+    
+}
+
+button.Button.selected {
+    background-color: #0c0f86;
+    color: #5355bb;
+}
+
+@keyframes scale {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0.75);
+    }
+}
+
+/*invert colors*/
+button.Button:hover {
+    background-color: #0c0f86;
+    color: #5355bb;
+}
+p {
+    animation: flashingRGB 0.05s ease-in-out infinite;
+    margin: 0;
+
+}
+
+@keyframes flashingRGB {
+    0% {
+        color: rgb(255, 0, 0);
+    }
+    33% {
+        color: rgb(0, 255, 0);
+    }
+    66% {
+        color: rgb(0, 0, 255);
+    }
+    100% {
+        color: rgb(255, 0, 0);
+    }
+}
+
+.Login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;   
+}
+
+.Login.active {
+    animation: slideUp 0.5s ease-in-out;
+    animation-fill-mode: forwards;
+    position: relative;
+}
+
+@keyframes slideUp {
+    0% {
+        top: 0;
+    }
+    100% {
+        top: -15vh;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    * {
+        font-size: 10px;
+    }
+
+    button.Button {
+        width: 40vw;
+        min-width: 10px;
+    }
+
+    .Buttons {
+        width: 100%;
+    }
+}
