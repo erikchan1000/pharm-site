@@ -1,5 +1,4 @@
 h1 {
-    font-size: 3rem;
     font-weight: bold;
     font-style: italic;
     color: #5355bb;
@@ -28,14 +27,13 @@ h1 {
 button.Button {
     color:white;
     background-color: #5355bb;
-    height: 10vh;
-    width: 24vh;
+    height: 8vh;
+    width: 10vh;
     border-radius: 5%;
-    font-size: 1.5em;;
     font-weight: bold;
     font-style: italic;
     max-width: 275px;
-    min-width: 200px;
+    min-width: 170px;
     margin: 1vh 2vw;
 }
 
