@@ -30,7 +30,7 @@ export default function LandingPage(props) {
                 
             </div>
             <div className={'Login ' + (buttonId !== null ? "active" : '')}>
-                <h1>
+                <h1 className={buttonId !== null ? "adjust" : ""}>
                     You are a...
                 </h1>
                 <div className="Buttons">

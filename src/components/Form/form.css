@@ -8,7 +8,8 @@
 
 .Form {
     display: flex;
-    
+    font-size: 1rem;
+    width: fit-content;
 }
 
 @keyframes reveal {
@@ -47,3 +48,4 @@ p {
     font-size: 200px;
     overflow: hidden
 }
+
