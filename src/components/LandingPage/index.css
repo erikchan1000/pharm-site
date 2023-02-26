@@ -90,6 +90,7 @@ p {
     flex-direction: column;
     justify-content: center;
     align-items: center;   
+    width: 100%;
 }
 
 .Login.active {
@@ -123,7 +124,7 @@ h1.adjust {
 
 @media screen and (max-width: 450px) {
     * {
-        font-size: 10px;
+        font-size: 0.8rem;
     }
 
     button.Button {

@@ -13,11 +13,11 @@ export default function Form({hidden, activeButton}) {
                     noValidate
                     autoComplete="off"
                 >
-                    <TextField id="outlined-basic" label="Name" variant="filled" />
-                    <TextField id="outlined-basic" label="Clinic" variant="filled" />
-                    <TextField id="outlined-basic" label="Docs" variant="filled" />
+                    <TextField label="Name" variant="filled" className="fields"/>
+                    <TextField label="Clinic" variant="filled" className="fields"/>
+                    <TextField label="Docs" variant="filled" className="fields"/>
                 </Box>
-
+                    
                 <Button className='submit'>
                 Submit
                 </Button>
