@@ -28,15 +28,15 @@ h1 {
 button.Button {
     color:white;
     background-color: #5355bb;
-    height: 8vh;
-    width: 10vh;
+    height: 10vh;
+    width: 22vh;
     border-radius: 5%;
     font-weight: bold;
     font-style: italic;
     max-width: 275px;
-    min-width: 170px;
+    min-width: 150px;
     margin: 1vh 2vw;
-    font-size: 1rem;
+    font-size: .7em;
 }
 
 button.Button.active {
@@ -89,8 +89,7 @@ p {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;   
-    width: 100%;
+    align-items: center;
 }
 
 .Login.active {
@@ -130,6 +129,7 @@ h1.adjust {
     button.Button {
         width: 40vw;
         min-width: 10px;
+        font-size: 1.2rem;
     }
 
     .Buttons {

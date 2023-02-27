@@ -1,15 +1,7 @@
-div .MuiInputLabel-root {
-    font-size: 0.8rem;
-    
-  }
-  
-div .MuiInputBase-input {
-    font-size: 0.8rem;
-}
 
-form div.MuiFormControl-root {
-    min-width: 1rem;
-    
+.content {
+    display: flex;
+    justify-content: center;
 }
 
 .Form.unhidden {
@@ -22,8 +14,9 @@ form div.MuiFormControl-root {
 
 .Form {
     display: flex;
-    font-size: 0.75rem;
+    font-size: 0.65rem;
     width: 100%;
+    flex-direction: column;
 }
 
 form {
@@ -56,8 +49,8 @@ button.submit {
     padding-right: 1vw;
     margin: calc(1vh + 8px) 0;
     align-self: center;
-    width: 40%;
-    font-size: 0.8rem;
+    width: 35%;
+    font-size: .8em;
 }
 
 button.submit:hover {    
@@ -70,3 +63,8 @@ p {
     overflow: hidden
 }
 
+@media screen and (max-width: 450px) {
+    button.submit {
+        font-size: 1.25em;
+    }
+}
