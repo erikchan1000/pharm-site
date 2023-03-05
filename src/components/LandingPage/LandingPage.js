@@ -3,6 +3,22 @@ import React, {useState} from 'react';
 import Button from '@mui/material/Button';
 import Form from '../Form/Form.js';
 import logo from "../Assets/picture.webp";
+import customer from "../Assets/customer.png";
+import doctor from "../Assets/doctor.png";
+
+
+const CustomButton = ({image, content, buttonId, setButtonId, currId}) => {
+    const handleClick = (event) => {
+        setButtonId(event.currentTarget.id);
+    }
+
+    return (
+        <div className={'CustomButton ' + (currId !== null ? "active " : ' ')}>
+            <img src={image}></img>
+            <Button id={buttonId} className={'Button ' + (currId === buttonId ? "selected" : "")} variant='contained' onClick={handleClick}>{content}</Button>
+        </div>
+    )
+}
 
 export default function LandingPage(props) {
 
@@ -15,13 +31,6 @@ export default function LandingPage(props) {
     const [buttonId, setButtonId] = useState(null);
     const [form, setForm]  = useState(initialForm);
 
-
-    const handleClick = (event) => {
-        console.log(event.currentTarget.id)
-        console.log(typeof(event.currentTarget.id))
-        setButtonId(event.currentTarget.id);
-    }
-
     return (
         
         <>
@@ -31,17 +40,19 @@ export default function LandingPage(props) {
             </div>
             <div className={'Login ' + (buttonId !== null ? "active" : '')}>
                 <h1 className={buttonId !== null ? "adjust" : ""}>
-                    You are a...
+                    Select the account you are registering as:
                 </h1>
                 <div className="Buttons">
-                    <Button id="1" className={'Button ' + (buttonId !== null ? "active " : ' ') + (buttonId === "1" ? "selected" : "")} variant='contained' onClick={handleClick}>Customer</Button>
-                    
-                    <Button id="2" className={'Button ' + (buttonId !== null ? "active " : ' ') + (buttonId === "2" ? "selected" : "")} variant='contained' onClick={handleClick}>Prescriber</Button>
-                    
+                    <CustomButton image={doctor} content="Doctor" buttonId="1" setButtonId={setButtonId} currId={buttonId}/>
+                    <CustomButton image={customer} content="Patient" buttonId="2" setButtonId={setButtonId} currId={buttonId}/>
                 </div>
-                <Form activeButton={buttonId} hidden={buttonId === null}/> 
+                <Form activeButton={buttonId} hidden={buttonId === null}/>
             </div>
-            
+            <div className={"Register " + (buttonId !== null ? "hidden" : "")}>
+                <p>
+                    Already have an account? <a href='/login'>Login</a>
+                </p>
+            </div>            
         </>
     )
 }

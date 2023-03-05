@@ -1,10 +1,26 @@
+.CustomButton {
+    display: flex;
+    position: relative;
+    height: 15.5vh;
+    width: 15vh;
+    flex-direction: column;
+    margin: 1vh 2vw;
+    align-items: center;
+}
+
+.CustomButton img {
+    position: absolute;
+    height: 50%;
+    top: 0;
+    z-index: 1;
+}
 h1 {
     font-weight: bold;
     font-style: italic;
-    color: #5355bb;
+    color: black;
     text-align: center;
     margin: 0;
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
 
 .break {
@@ -23,32 +39,36 @@ h1 {
     flex-wrap: wrap;
     justify-content: center;
     margin: calc(1vh + 8px) 0;
+    
 }
 
 button.Button {
-    color:white;
-    background-color: #5355bb;
-    height: 10vh;
-    width: 22vh;
-    border-radius: 5%;
+    color:black;
+    background: rgba(28, 66, 115, 0.13);
+    min-height: 10vh;
+    width: 15vh;
+    border-radius: 15%;
     font-weight: bold;
     font-style: italic;
-    max-width: 275px;
-    min-width: 150px;
-    margin: 1vh 2vw;
-    font-size: .7em;
+    max-width: 200px;
+    min-width: 100px;
+    font-size: .6em;
+    border: .2rem solid #1C4273;
+    position: absolute;
+    bottom: 0;
 }
 
-button.Button.active {
+.CustomButton.active {
     animation: scale 0.5s ease-in-out;
     animation-fill-mode: forwards;
     
 }
 
 button.Button.selected {
-    background-color: #0c0f86;
-    color: #5355bb;
+    background: #1C4273;
+    color: white;
 }
+
 
 @keyframes scale {
     0% {
@@ -61,28 +81,8 @@ button.Button.selected {
 
 /*invert colors*/
 button.Button:hover {
-    background-color: #0c0f86;
-    color: #5355bb;
-}
-p {
-    animation: flashingRGB 0.05s ease-in-out infinite;
-    margin: 0;
-
-}
-
-@keyframes flashingRGB {
-    0% {
-        color: rgb(255, 0, 0);
-    }
-    33% {
-        color: rgb(0, 255, 0);
-    }
-    66% {
-        color: rgb(0, 0, 255);
-    }
-    100% {
-        color: rgb(255, 0, 0);
-    }
+    background: #1C4273;
+    color: white;
 }
 
 .Login {
@@ -90,6 +90,7 @@ p {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    min-width: 80%;
 }
 
 .Login.active {
@@ -121,14 +122,22 @@ h1.adjust {
     }
 }
 
+.Register {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.8rem;
+}
+
+
+
 @media screen and (max-width: 450px) {
     * {
         font-size: 0.8rem;
     }
 
     button.Button {
-        width: 40vw;
-        min-width: 10px;
+        min-width: 100%;
         font-size: 1.2rem;
     }
 

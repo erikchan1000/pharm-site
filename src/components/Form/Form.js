@@ -1,56 +1,76 @@
 import './form.css';
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import Box from '@mui/material/Box';
-import { TextField, Button, useMediaQuery } from '@mui/material';
-import { StyledTextField } from '../StyledTextField';
-
+import { Button, useMediaQuery } from '@mui/material';
+import PrescriberForm from './PrescriberForm.js';
+import PatientForm from './PatientForm.js';
 
 
 export default function Form({hidden, activeButton}) {
-    const matches = useMediaQuery('(max-width:450px)');
+    const matches = useMediaQuery('(max-width:520px)');
+    console.log(activeButton)
+    if (activeButton === '1') {
+        return (
+            <div className={'Form ' + (hidden ? 'hidden' : 'unhidden')}>
+                
+                <div className='content' >
+                    <Box component="form" sx={{
+                        '& > :not(style)': { margin: "0px 8px", width: '25ch' },
+                    }}
+                        noValidate
+                        autoComplete="off"
+                    >
+                        {!matches ? <PrescriberForm formId="1" /> : <PrescriberForm formId="3"/>}
+                    </Box>
 
-    const form1 = (
-        <>
-            <StyledTextField id="standard-basic" label="Name" variant="filled" className="fields" size="small"/>
-            <StyledTextField id="standard-basic" label="Clinic" variant="filled" className="fields" size="small"/>
-            <StyledTextField id="standard-basic" label="Docs" variant="filled" className="fields" size="small"/>
-            <StyledTextField id="standard-basic" label="Email" variant="filled" className="fields" size="small"/>
-        </>
-    )
+                    <Box component="form" sx={{
+                        '& > :not(style)': { margin: "0px 8px", width: '25ch' },
+                    }}
+                        noValidate
+                        autoComplete="off"
+                    >
+                        {!matches ? <PrescriberForm formId="2" /> : <PrescriberForm formId="4" />}
+                    </Box>
+                  
+                    
+                </div>
+                <Button className='submit'>
+                    Submit
+                </Button>
 
-    const form2 = (
-        <>
-            <TextField id="standard-basic" label="Name" variant="filled" className="fields" size="small"/>
-            <TextField id="standard-basic" label="Clinic" variant="filled" className="fields" size="small"/>
-            <TextField id="standard-basic" label="Docs" variant="filled" className="fields" size="small"/>
-            <TextField id="standard-basic" label="Email" variant="filled" className="fields" size="small"/>
-        </>
-    )
-    
+            </div>
+
+        )
+    }
+
     return (
-        <div className={'Form ' + (hidden ? 'hidden' : 'unhidden')} >
-            <div className='form-header'>
-                <h2>Login</h2>
-                <h2>Register</h2>
+        <div className={'Form ' + (hidden ? 'hidden' : 'unhidden')}>
+                
+                <div className='content'>
+                    <Box component="form" sx={{
+                        '& > :not(style)': { margin: "0px 8px", width: '25ch' },
+                    }}
+                        noValidate
+                        autoComplete="off"
+                    >
+                        {!matches ? <PatientForm formId="1"  buttonId={activeButton}/> : <PatientForm formId="3"  buttonId={activeButton}/>}
+                    </Box>
+
+                    <Box component="form" sx={{
+                        '& > :not(style)': { margin: "0px 8px", width: '25ch' },
+                    }}
+                        noValidate
+                        autoComplete="off"
+                    >
+                        {!matches ? <PatientForm formId="2"  buttonId={activeButton}/> : <PatientForm formId="4"  buttonId={activeButton}/>}
+                    </Box>
+                    
+                    
+                </div>
+                <Button className='submit'>
+                    Submit
+                </Button>
 
             </div>
-            <div className='content'>
-                <Box component="form" sx={{
-                    '& > :not(style)': { m: 1, width: '25ch' },
-                }}
-                    noValidate
-                    autoComplete="off"
-                >
-                    {!matches ? form1 : form2}
-                </Box>
-                
-                
-            </div>
-            <Button className='submit'>
-                Submit
-            </Button>
-
-        </div>
-
     )
 }

@@ -1,7 +1,11 @@
 
 .content {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    border: 2px solid #1C4273;
+    border-radius: 10px;
+    padding: 1em 0;
 }
 
 .Form.unhidden {
@@ -15,14 +19,15 @@
 .Form {
     display: flex;
     font-size: 0.65rem;
-    width: 100%;
-    flex-direction: column;
+    max-width: 90vw;
 }
+
 
 form {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    padding: 1vw 2vw;
 }
 
 @keyframes reveal {
@@ -43,28 +48,36 @@ form {
 }
 
 button.submit {
-    background-color: #5355bb;
-    color: white;
+    background: rgba(28, 66, 115, 0.13);
+    color: black;
     padding-left: 1vw;
     padding-right: 1vw;
     margin: calc(1vh + 8px) 0;
     align-self: center;
     width: 35%;
     font-size: .8em;
+    border: .2rem solid #1C4273;
+    border-radius: 10px;
 }
 
 button.submit:hover {    
-    background-color: #0c0f86;
-    color: #5355bb;
+    background: #1C4273;
+    color: white;
 }
 
-p {
-    font-size: 200px;
-    overflow: hidden
-}
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 520px) {
     button.submit {
         font-size: 1.25em;
+    }
+
+   
+
+    input.css-c5v1qu-MuiInputBase-input-MuiFilledInput-input {
+        font-size: 0.6rem;
+    }
+
+    label.css-11qvwfa-MuiFormLabel-root-MuiInputLabel-root {
+        font-size: 0.6rem;
     }
 }

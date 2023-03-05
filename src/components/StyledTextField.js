@@ -3,11 +3,14 @@ import {TextField} from '@mui/material';
 
 export const StyledTextField = styled(TextField)({
 
+    '& .MuiFilledInput-root': {
+        borderRadius: '5px',
+    },
     '& .MuiFilledInput-input': {
-        'padding-top': '10px',
-        'padding-bottom': '3px',
-        'padding-left': '10px',
-        'padding-right': '10px',
+        'paddingTop': '10px',
+        'paddingBottom': '3px',
+        'paddingLeft': '10px',
+        'paddingRight': '10px',
         fontSize: '0.65rem'
     },
     '& .MuiInputLabel-filled': {
@@ -17,4 +20,14 @@ export const StyledTextField = styled(TextField)({
     '& .MuiInputLabel-filled.MuiInputLabel-shrink': {
         transform: 'translate(10px, 1px) scale(0.7)',
     },
+    '& .MuiFilledInput-underline:after': {
+        borderBottom: 'none'
+    },
+    '& .MuiFilledInput-underline:before': {
+        borderBottom: 'none'
+    },
+    '& .MuiFilledInput-underline:hover:not(.Mui-disabled):before': {
+        borderBottom: 'none'
+    },
+
 });
